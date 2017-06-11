@@ -16,6 +16,10 @@ RUN apt-get install -y nodejs npm
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g uglify-js
 RUN apt-get install -y maven
+RUN wget https://services.gradle.org/distributions/gradle-3.4.1-bin.zip
+RUN mkdir /opt/gradle
+RUN unzip -d /opt/gradle gradle-3.4.1-bin.zip
+ENV PATH $PATH:/opt/gradle/gradle-3.4.1/bin
 
 RUN mkdir /workbench
 
